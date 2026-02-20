@@ -26,3 +26,12 @@ jobs:
           echo "Node version: $(node --version)"
           echo "Python version: $(python --version)"
           echo "Git version: $(git --version)"
+      - name: Show date and disk Info
+        run: |
+          echo "Current dtae: $(date)"
+          df -h
+          free -m
+      - name: Custom message
+        env: 
+          MY_NAME: "RAkib"
+        run: echo "Hello $MY_NAME, workflow is running"
